@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+.fakeimg {
+    height: 200px;
+    background: #aaa;
+}
+
+.successLogin {
+	color: Fuchsia;
+}
+
+.spanTag {
+	float: right;
+}
+
+.notLogin{	
+	color: white;
+}
+
+.loginDiv {
+	text-align: center;
+	width: 300px;
+}
+
+#ntTable {
+   text-align: center;
+   border-collapse: collapse;
+   margin: auto;
+}
+
+#ntFirstTr {
+   background-color: skyblue;
+   font-weight: bold;
+}
+
+.ntTitleTd {
+   
+   width: 300px;
+}
+
+.ntTitleTd, .ntContentTd, .ntCreDateTd {
+
+border: 1px solid black;
+
+}
+
+.ntContentTd {
+   width: 500px;
+}
+
+.ntCreDateTd {
+   width: 200px;
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.mbBtn {
+	width: 75px;
+	height: 40px;
+	text-align: center;
+}
+
+.etImg {   
+   width: 500px;
+   height: 350px;
+}
+
+.etPTag {
+   font-size: 20px;
+   font-weight: 500;
+}

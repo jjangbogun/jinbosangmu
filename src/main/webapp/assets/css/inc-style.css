@@ -1,0 +1,219 @@
+/*****************************************************************************************/
+/** FILE NAME   : /S2.Assets/global.css/inc-style.css
+/** DESCRIPTION :
+/** DATABASE    :
+/** AUTHOR      : SmartNJoy
+/** DATE        : 0000-00-00
+/** HISTORY
+/** S2-Project-Set
+/*****************************************************************************************/
+
+/* 
+* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess 
+*/ 
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@font-face { 
+	font-family: 'Noto Sans KR'; 
+	font-style: normal; 
+	font-weight: 100; 
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype'); 
+} 
+@font-face { 
+	font-family: 'Noto Sans KR'; 
+	font-style: normal; 
+	font-weight: 300; 
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype'); 
+} 
+@font-face { 
+	font-family: 'Noto Sans KR'; 
+	font-style: normal; 
+	font-weight: 400; 
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype'); 
+} 
+@font-face { 
+	font-family: 'Noto Sans KR'; 
+	font-style: normal; 
+	font-weight: 500; 
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype'); 
+} 
+@font-face { 
+	font-family: 'Noto Sans KR'; 
+	font-style: normal; 
+	font-weight: 700; 
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype'); 
+} 
+@font-face { 
+	font-family: 'Noto Sans KR'; 
+	font-style: normal; 
+	font-weight: 900; 
+	src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype'); 
+} 
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, label {margin:0; padding:0; border:0; outline:0; color:inherit; font-family:'Lato','Noto Sans KR',sans-serif; line-height:1.7; vertical-align:baseline; letter-spacing:-0.05em;}
+
+
+/* 기본폰트 */
+
+.font_size_9 {
+	font-size: 9px;
+}
+.font_size_10 {
+	font-size: 10px;
+}
+.font_size_11 {
+	font-size: 11px;
+}
+.font_size_12 {
+	font-size: 12px;
+}
+.font_size_13 {
+	font-size: 13px;
+}
+.font_size_14 {
+	font-size: 14px;
+}
+.font_size_15 {
+	font-size: 15px;
+}
+.font_size_16 {
+	font-size: 16px;
+}
+.font_size_17 {
+	font-size: 17px;
+}
+.font_size_18 {
+	font-size: 18px;
+}
+.font_size_19 {
+	font-size: 19px;
+}
+.font_size_20 {
+	font-size: 20px;
+}
+.font_size_21 {
+	font-size: 21px;
+}
+.font_size_22 {
+	font-size: 22px;
+}
+.font_size_23 {
+	font-size: 23px;
+}
+.font_size_24 {
+	font-size: 24px;
+}
+.font_size_26 {
+	font-size: 26px;
+}
+.font_size_28 {
+	font-size: 28px;
+}
+.font_size_30 {
+	font-size: 30px;
+}
+.font_size_40 {
+	font-size: 40px;
+}
+.font_size_50 {
+	font-size: 50px;
+}
+.text-s-black {
+	color: #000000;
+}
+.text-s-purple {
+	color: #8354d1;
+}
+.text-s-blue {
+	color: #0086d1;
+}
+.text-s-green {
+	color: #00b07d;
+}
+.text-s-ygreen {
+	color: #86b417;
+}
+.text-s-yellow {
+	color: #f2ea4e;
+}
+.text-s-orange {
+	color: #fc6400;
+}
+.text-s-red {
+	color: #f21111;
+}
+.text-s-gray {
+	color: #a3a3a3;
+}
+.text-s-white {
+	color: #ffffff;
+}
+.text-s-ff7454 {
+	color: #ff7454;
+}
+.text-s-00c4ac {
+	color: #00c4ac;
+}
+.text-s-e4644b {
+	color: #e4644b;
+}
+.text-s-38b3d5 {
+	color: #38b3d5;
+}
+.text-s-e65d65 {
+	color: #e65d65;
+}
+.text-s-ffb9a9 {
+	color: #ffb9a9;
+}
+.text-s-263238 {
+	color: #263238;
+}
+
+.text-w-100 {
+	font-weight: 100;
+}
+.text-w-200 {
+	font-weight: 200;
+}
+.text-w-300 {
+	font-weight: 300;
+}
+.text-w-400 {
+	font-weight: 400;
+}
+.text-w-500 {
+	font-weight: 500;
+}
+.text-bold {
+	font-weight: bold;
+}
+.text-italic {
+	font-style: italic;
+}
+
+.text-light,a.text-light:hover,a.text-light:focus{color:#fff}
+.text-muted,a.text-muted:hover,a.text-muted:focus{color:#909ba1}
+.text-primary,a.text-primary:hover,a.text-primary:focus{color:#1c3550}
+.text-info,a.text-info:hover,a.text-info:focus{color:#0391d1}
+.text-success,a.text-success:hover,a.text-success:focus{color:#65b41e}
+.text-warning,a.text-warning:hover,a.text-warning:focus{color:#db9a00}
+.text-danger,a.text-danger:hover,a.text-danger:focus{color:#f22314}
+.text-main,a.text-main:hover,a.text-main:focus{color:#4d627b}
+.text-mint,a.text-mint:hover,a.text-mint:focus{color:#1f897f}
+.text-purple,a.text-purple:hover,a.text-purple:focus{color:#6610f2}
+.text-pink,a.text-pink:hover,a.text-pink:focus{color:#ed417b}
+.text-dark,a.text-dark:hover,a.text-dark:focus{color:#2b323a}

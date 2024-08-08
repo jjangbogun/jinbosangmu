@@ -13,9 +13,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 
-<jsp:include page="./include/incHead.jsp"></jsp:include>
+<jsp:include page="../include/incHead.jsp"></jsp:include>
 
 <link href="${pageContext.request.contextPath}/assets/incUser.css" rel="stylesheet">
+
+<%-- <jsp:useBean id="noticeDto"
+   	scope="request"
+  	class="jbsm.user.notice.dto.NoticeDto"/> --%>
 
 <body>
 
@@ -27,16 +31,15 @@
 //-->
 </script>
   
-<jsp:include page="./include/incTop.jsp"></jsp:include>
+<jsp:include page="../include/incTop.jsp"></jsp:include>
 
-	<link href="/S2.User/inc/inc-sub.css" rel="stylesheet">
 
 	<!-- CONTENT --------------------------------------------------------------------------------->
 
 		<section class='inner-intro dark-bg bg-image overlay-dark parallax parallax-background1 overlay-dark70' data-background-img='http://sjd03.godohosting.com/S2.User/img/sub-introduce.jpg'>
 			<div class='container'>
 				<div class='row title'>
-					<h2>진보상무</h2>
+					<h2>공지사항 상세</h2>
 					<span class='sd-1 sd-sm sd-thick-3px sd-center'></span>
 					<div class='page-breadcrumb'><span>여기에 서브페이지의 설명 멘트가 들어 갑니다!</span></div>
 				</div>
@@ -47,16 +50,28 @@
         <section class="ptb ptb-sm-80">
             <div class="container" id="div_sub" style='height: 400px'>
 
-				<h1 style="text-align: center;">JBSM에 오신것을</h1>
-				<p style="text-align: center; font-size: 25px;">환영합니다</p>
-
+				<div class="card">
+					<div class="card-header" style='font-weight: bold;'>
+						${noticeDto.noticeTitle}
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">${noticeDto.noticeCdate}</li>
+						<li class="list-group-item">${noticeDto.noticeContent}</li>
+					</ul>
+				</div>
+				
+				<div class='text-center mt-5'>
+		        	<button onclick='noticeListFnc()' class='btn btn-brown'>목록</button>
+				</div>
+				
             </div>
         </section>
+        
         <!-- End Content Section -->
 
 	<!-- END CONTENT ---------------------------------------------------------------------------->
 
 
-<jsp:include page="./include/incFooter.jsp"></jsp:include>
+<jsp:include page="../include/incFooter.jsp"></jsp:include>
 		
-<jsp:include page="./include/incClose.jsp"></jsp:include>
+<jsp:include page="../include/incClose.jsp"></jsp:include>
