@@ -58,9 +58,7 @@
 				    		<img alt="event" class="etImg"				    		
 				             src="${pageContext.request.contextPath}/imgs/${eventDto.eventTimg}">
 							</a>
-				            <p class="etPTag">${eventDto.eventName}</p>
-				            
-				            
+				            <p class="etPTag">${eventDto.eventName}</p>				            				            
 				    	</div>
 					</c:forEach>
 			    </div>		   		    
