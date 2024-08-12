@@ -50,7 +50,7 @@
             <div class="container" id="div_sub">
 
 				<h1>회원정보</h1>
-			<form action='./modify' method='post'>
+				<form action='./modify' method='post'>
 				<input type='hidden' name='memberNo' class='form-control'
 					value='${memberDto.memberNo}'> 
 					

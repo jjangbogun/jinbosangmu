@@ -52,12 +52,13 @@
 <!-- 			    </button> -->
 			<form action='new' method='post'>
 				<br>
-				<input type='hidden' name='customerMno' id='customerMno' value='${sessionScope.memberNo}'>
+				<input type='hidden' name='customerMno' id='customerMno' 
+					value='${sessionScope.memberNo}'>
 				
 				<div style="font-size: 20px">질문</div>
 				<br>
 				<textarea name='customerQue' id='customerQue'
-				rows="10" cols="100"></textarea> 
+					rows="10" cols="100"></textarea> 
 				<br>
 				
 				<input type='submit' value='추가' class='btn btn-brown'>
