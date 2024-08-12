@@ -21,7 +21,7 @@ public class Login extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd = request.getRequestDispatcher("./LoginForm.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("./Login.jsp");
 		rd.forward(request, response);
 	}
 	
@@ -47,9 +47,9 @@ public class Login extends HttpServlet{
 			memberDto = memberDao.memberExist(memberEmail, memberPw);
 			
 			// 회원이 없다면 로그인 실패 페이지로 이동
-			if(memberDto == null) {
+			if(memberDto == null) {				
 				System.out.println("로그인실패");
-				response.sendRedirect("LoginForm.jsp?loginCheck=fail");
+				response.sendRedirect("Login.jsp?loginCheck=fail");
 				
 				return;	
 			}
