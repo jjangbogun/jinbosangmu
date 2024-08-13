@@ -124,6 +124,10 @@ function customerNewFnc() {
    location.href = "./new";
 }
 
+function customerListFnc() {
+   location.href = "./list";
+}
+
 /*이벤트 추가*/
 function eventAddFnc() {
    location.href = "./new";
@@ -133,3 +137,5 @@ function eventAddFnc() {
 function eventListFnc() {
    location.href = "./list";
 }
+
+

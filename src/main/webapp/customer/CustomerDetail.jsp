@@ -69,7 +69,7 @@
 				</div>
 				
 				<div class='text-center mt-5'>
-		        	<button onclick='noticeListFnc()' class='btn btn-brown'>목록</button>
+		        	<button onclick='customerListFnc();' class='btn btn-brown'>목록</button>
 				</div>
 				
             </div>
