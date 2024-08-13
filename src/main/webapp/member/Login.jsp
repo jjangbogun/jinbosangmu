@@ -56,11 +56,13 @@
 					<form action="./login" method="post" onsubmit="return loginCheckFnc()">
 						<div class="mb-3 mt-3">
 				      		<label for="email">Email</label>
-					      	<input type="email" class="form-control" id="memberEmail" placeholder="ex:hong@test.com" name="memberEmail">
+					      	<input type="email" class="form-control" id="memberEmail" 
+					      		placeholder="ex:hong@test.com" name="memberEmail">
 					    </div>
 					    <div class="mb-3">
 					      	<label for="pwd">Password</label>
-					      	<input type="password" class="form-control" id="memberPw" placeholder="Enter password" name="memberPw">
+					      	<input type="password" class="form-control" id="memberPw" 
+					      		placeholder="Enter password" name="memberPw">
 							<input type='hidden' name='securePw' id='securePw' value=''>
 					    </div>
 						<br>

@@ -55,35 +55,35 @@
 						<td>답변유무</td>
 					</tr>	
             
-               <c:forEach var="CustomerDto" items="${customerList}" varStatus="status">
-                  <tr>
-                     <td>
-                        ${status.count}
-                     </td>
+				<c:forEach var="CustomerDto" items="${customerList}" varStatus="status">
+					<tr>
+                    	<td>
+                        	${status.count}
+                     	</td>
                      
-                     <td>
-                        <a href='./detail?customerNo=${CustomerDto.customerNo}'>
-                           ${CustomerDto.customerQue}
-                        </a>       
-                     </td>
+                     	<td>
+                        	<a href='./detail?customerNo=${CustomerDto.customerNo}'>
+                           		${CustomerDto.customerQue}
+                        	</a>       
+                     	</td>
                      
-                     <td>
-                        ${CustomerDto.customerQdate}
-                     </td>
+                     	<td>
+                        	${CustomerDto.customerQdate}
+                     	</td>
                      
-                     <td>
-						<c:choose> 
-							<c:when test="${CustomerDto.customerAns == null}"> 
-								답변준비중
-							</c:when> 
-							<c:otherwise> 
-								답변완료
-							</c:otherwise> 
-						</c:choose> 
+                     	<td>
+							<c:choose> 
+								<c:when test="${CustomerDto.customerAns == null}"> 
+									답변준비중
+								</c:when> 
+								<c:otherwise> 
+									답변완료
+								</c:otherwise> 
+							</c:choose> 
 
-                     </td>
-                  </tr>
-               </c:forEach>
+                     	</td>
+                  	</tr>
+				</c:forEach>
             </table>
 
 			<div class='text-center mt-5'>
