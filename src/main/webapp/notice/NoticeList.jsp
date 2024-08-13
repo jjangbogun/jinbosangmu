@@ -37,7 +37,9 @@
 		data-background-img='http://sjd03.godohosting.com/S2.User/img/sub-introduce.jpg'>
 		<div class='container'>
 			<div class='row title'>
+			
 				<h2>공지사항</h2>
+				
 				<span class='sd-1 sd-sm sd-thick-3px sd-center'></span>
 				<div class='page-breadcrumb'>
 					<span>진보상무의 공지사항입니다</span>
