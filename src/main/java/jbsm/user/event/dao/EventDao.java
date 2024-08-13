@@ -18,6 +18,7 @@ public class EventDao {
       this.connection = conn;
    }
 
+   // 이벤트 리스트
    public List<EventDto> eventList() throws Exception {
 
       PreparedStatement pstmt = null;// 상태
@@ -89,6 +90,7 @@ public class EventDao {
 
    }
 
+   // 이벤트 추가
    public int eventInsert(EventDto eventDto) throws Exception {
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -134,7 +136,7 @@ public class EventDao {
 		return result;
 	}
    
-// 회원 삭제
+// 이벤트 삭제
 	public int eventDelete(int eventNo) {
 		int result = 0;
 
@@ -169,7 +171,7 @@ public class EventDao {
 		return result;
 	}
 	
-	// 회원 상세 정보 조회
+	// 이벤트 상세 정보 조회
 	public EventDto eventSelectOne(int eventNo) throws Exception {
 		EventDto eventDto = new EventDto();
 
@@ -235,7 +237,7 @@ public class EventDao {
 
 
 
-	// 회원 정보 변경
+	// 이벤트 수정
 	public int eventUpdate(EventDto eventDto) {
 		int result = 0;
 

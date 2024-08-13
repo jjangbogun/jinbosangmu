@@ -15,7 +15,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary font_size_20">이벤트 리스트</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary font_size_20">질문 리스트</h6>
                                     <div class="dropdown no-arrow">
                                     </div>
                                 </div>

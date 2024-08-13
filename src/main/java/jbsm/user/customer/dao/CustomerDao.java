@@ -20,6 +20,7 @@ public class CustomerDao {
 		this.connection = conn;
 	}
 
+	//문의 리스트
 	public List<CustomerDto> customerList(int memberNo) throws Exception {
 
 		PreparedStatement pstmt = null;// 상태
@@ -91,7 +92,7 @@ public class CustomerDao {
 
 	} // finally 종료
 
-	
+	// 관리자 문의 리스트
 	public List<CustomerDto> customerAdList() throws Exception {
 
 		PreparedStatement pstmt = null;// 상태
@@ -160,7 +161,7 @@ public class CustomerDao {
 		}
 	}
 
-// 고객센터 조회
+// 문의센터 조회
 	public CustomerDto customerSelectOne(int customerNo) throws Exception {
 		CustomerDto customerDto = new CustomerDto();
 
@@ -222,6 +223,7 @@ public class CustomerDao {
 		return customerDto;
 	}
 	
+	// 문의 삭제
 	public int customerDelete(int customerNo) {
 		int result = 0;
 
@@ -256,7 +258,7 @@ public class CustomerDao {
 		return result;
 	}
 
-	// 고객센터 질문 변경
+	// 문의 변경
 	public int customerUpdate(CustomerDto customerDto) {
 		int result = 0;
 
@@ -293,7 +295,7 @@ public class CustomerDao {
 		return result;
 	}
 
-	// 회원등록
+	// 문의 추가
 	public int customerInsert(CustomerDto customerDto) throws Exception {
 		int result = 0;
 		PreparedStatement pstmt = null;

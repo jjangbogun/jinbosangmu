@@ -19,7 +19,7 @@
 			<div
 				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary font_size_20">
-					회원 정보</h6>
+					회원 정보변경</h6>
 				<div class="dropdown no-arrow"></div>
 			</div>
 

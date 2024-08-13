@@ -19,6 +19,7 @@ public class NoticeDao {
 		this.connection = conn;
 	}
 
+	// 공지사항 리스트
 	public List<NoticeDto> noticeList(int pageNum, int pageSize, String searchField, String searchText)
 			throws Exception {
 
@@ -105,6 +106,7 @@ public class NoticeDao {
 
 	}
 
+	// 공지사항 추가
 	public int noticeInsert(NoticeDto noticeDto) throws Exception {
 		int result = 0;
 		PreparedStatement pstmt = null;

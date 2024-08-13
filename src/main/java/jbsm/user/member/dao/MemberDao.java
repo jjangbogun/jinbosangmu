@@ -18,6 +18,7 @@ public class MemberDao {
 		this.connection = conn;
 	}
 
+	// 전체회원 리스트
 	public List<MemberDto> selectList(int pageNum, int pageSize, String searchField, String searchText)
 			throws Exception {
 
@@ -381,7 +382,7 @@ public class MemberDao {
 
 	}
 
-//	전체 공지사항 글 수
+//	전체 글 수
 	public int getTotal(String searchField, String searchText) {
 
 		int result = 0;

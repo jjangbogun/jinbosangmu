@@ -152,6 +152,31 @@ function noticeSearch() {
 	location.href = setUrl + '/admin/notice/list?searchField='+searchField+'&searchText='+searchText;
 }
 
+
+function noticeNew() {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/new';
+}
+
+function noticeModify(no) {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/modify?noticeNo=' + no;
+}
+
+function noticeDelete(no) {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/delete?noticeNo=' + no;
+}
+
+function noticeList() {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/list';
+}
+
 //event
 
 function eventList() {
@@ -295,29 +320,6 @@ function customerSearch() {
 	location.href = setUrl + '/admin/customer/list?searchField='+searchField+'&searchText='+searchText;
 }
 
-function noticeNew() {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/new';
-}
-
-function noticeModify(no) {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/modify?noticeNo=' + no;
-}
-
-function noticeDelete(no) {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/delete?noticeNo=' + no;
-}
-
-function noticeList() {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/list';
-}
 
 function customerModify(no) {
 
