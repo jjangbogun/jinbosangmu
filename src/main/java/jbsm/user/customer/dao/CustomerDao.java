@@ -38,12 +38,12 @@ public class CustomerDao {
          
          rs = pstmt.executeQuery();
 
-         int customerNo = 0;
-         int customerMno = 0;
-         String customerQue = "";
-         String customerAns = "";
-         Date customerQdate = null;
-         Date customerAdate = null;
+			int customerNo = 0;
+			int customerMno = 0;
+			String customerQue = "";
+			String customerAns = "";
+			Date customerQdate = null;
+			Date customerAdate = null;
 
          ArrayList<CustomerDto> customerList = new ArrayList<CustomerDto>();
 
@@ -100,7 +100,7 @@ public class CustomerDao {
 
 		String sql = "";
 
-		sql += "SELECT CUSTOMER_NO, CUSTOMER_QUE, CUSTOMER_ANS, CUSTOMER_QDATE, CUSTOMER_ADATE";
+		sql += "SELECT CUSTOMER_NO, CUSTOMER_MNO, CUSTOMER_QUE, CUSTOMER_ANS, CUSTOMER_QDATE, CUSTOMER_ADATE";
 		sql += " FROM CUSTOMER";
 		sql += " WHERE CUSTOMER_NO = ?";
 
@@ -111,6 +111,7 @@ public class CustomerDao {
 
 			rs = pstmt.executeQuery();
 
+			int customerMno = 0;
 			String customerQue = "";
 			String customerAns = "";
 			Date customerQdate = null;
@@ -119,12 +120,13 @@ public class CustomerDao {
 
 			if (rs.next()) {
 				customerNo = rs.getInt("CUSTOMER_NO");
+				customerMno = rs.getInt("CUSTOMER_MNO");
 				customerQue = rs.getString("CUSTOMER_QUE");
 				customerAns = rs.getString("CUSTOMER_ANS");
 				customerQdate = rs.getDate("CUSTOMER_QDATE");
 				customerAdate = rs.getDate("CUSTOMER_ADATE");
 
-				customerDto = new CustomerDto(customerNo, customerQue, customerAns, customerQdate, customerAdate);
+				customerDto = new CustomerDto(customerNo, customerMno, customerQue, customerAns, customerQdate, customerAdate);
 			} else {
 				throw new Exception("해당 번호의 회원을 찾을 수 없습니다.");
 			}
