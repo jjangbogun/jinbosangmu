@@ -6,6 +6,7 @@ function adminLoginCheck() {
 
 	let loginEmail = document.getElementById('loginEmail');
 	let loginPass = document.getElementById('loginPass');
+	let loginPassS = document.getElementById('loginPassS');
 	let loginEmailValue = loginEmail.value;
 	let loginPassValue = loginPass.value;
 
@@ -20,6 +21,10 @@ function adminLoginCheck() {
 		return false;
 	}
 	else {
+		
+		loginPassS.value = CryptoJS.SHA256(loginPassValue);
+		//loginPassS.value = loginPassValue;
+		//alert(loginPassS.value);
 		return;
 	}
 

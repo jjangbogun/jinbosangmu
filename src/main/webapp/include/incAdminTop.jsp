@@ -38,19 +38,25 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick='eventList();'>
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>이벤트 관리</span></a>
+            </li>            
+            
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick='memberList();'>
                     <i class="fas fa-fw fa-table"></i>
                     <span>회원 관리</span></a>
             </li>                              
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick='noticeList();'>
                     <i class="fas fa-fw fa-table"></i>
                     <span>공지사항 관리</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick='customerList();'>
                     <i class="fas fa-fw fa-table"></i>
                     <span>고객센터 관리</span></a>
             </li>
@@ -111,13 +117,14 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=session.getAttribute("ssoAdminName")%> (<%=session.getAttribute("ssoAdminEmail")%>)</span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="./admin/logout">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

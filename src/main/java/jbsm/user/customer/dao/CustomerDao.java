@@ -14,83 +14,152 @@ import jbsm.user.member.dto.MemberDto;
 
 public class CustomerDao {
 
-   private Connection connection;
+	private Connection connection;
 
-   public void setConnection(Connection conn) {
-      this.connection = conn;
-   }
+	public void setConnection(Connection conn) {
+		this.connection = conn;
+	}
 
-   public List<CustomerDto> customerList(int memberNo) throws Exception {
+	public List<CustomerDto> customerList(int memberNo) throws Exception {
 
-      PreparedStatement pstmt = null;// 상태
-      ResultSet rs = null;// 요청
+		PreparedStatement pstmt = null;// 상태
+		ResultSet rs = null;// 요청
 
-      try {
-         String sql = "";
+		try {
+			String sql = "";
 
-         sql += "SELECT CUSTOMER_NO, CUSTOMER_MNO, CUSTOMER_QUE, CUSTOMER_ANS, CUSTOMER_QDATE, CUSTOMER_ADATE";
-         sql += " FROM CUSTOMER";
-         sql += " WHERE CUSTOMER_MNO = ?";     
-      
-         pstmt = connection.prepareStatement(sql);
+			sql += "SELECT CUSTOMER_NO, CUSTOMER_MNO, CUSTOMER_QUE, CUSTOMER_ANS, CUSTOMER_QDATE, CUSTOMER_ADATE";
+			sql += " FROM CUSTOMER";
+			sql += " WHERE CUSTOMER_MNO = ?";
 
-         pstmt.setInt(1, memberNo);
-         
-         rs = pstmt.executeQuery();
+			pstmt = connection.prepareStatement(sql);
 
-         int customerNo = 0;
-         int customerMno = 0;
-         String customerQue = "";
-         String customerAns = "";
-         Date customerQdate = null;
-         Date customerAdate = null;
+			pstmt.setInt(1, memberNo);
 
-         ArrayList<CustomerDto> customerList = new ArrayList<CustomerDto>();
+			rs = pstmt.executeQuery();
 
-         CustomerDto customerDto = null;
+			int customerNo = 0;
+			int customerMno = 0;
+			String customerQue = "";
+			String customerAns = "";
+			Date customerQdate = null;
+			Date customerAdate = null;
 
-         while (rs.next()) {
-        	customerNo = rs.getInt("CUSTOMER_NO");
-        	customerNo = rs.getInt("CUSTOMER_MNO");
-            customerQue = rs.getString("CUSTOMER_QUE");
-            customerAns = rs.getString("CUSTOMER_ANS");
-            customerQdate = rs.getDate("CUSTOMER_QDATE");
-            customerAdate = rs.getDate("CUSTOMER_ADATE");
+			ArrayList<CustomerDto> customerList = new ArrayList<CustomerDto>();
 
-            customerDto = new CustomerDto(customerNo, customerMno, customerQue, customerAns, customerQdate, customerAdate);
+			CustomerDto customerDto = null;
 
-            customerList.add(customerDto);
-         }
+			while (rs.next()) {
+				customerNo = rs.getInt("CUSTOMER_NO");
+				customerMno = rs.getInt("CUSTOMER_MNO");
+				customerQue = rs.getString("CUSTOMER_QUE");
+				customerAns = rs.getString("CUSTOMER_ANS");
+				customerQdate = rs.getDate("CUSTOMER_QDATE");
+				customerAdate = rs.getDate("CUSTOMER_ADATE");
 
-         return customerList;
-      } catch (Exception e) {
-         // TODO: handle exception
-         e.printStackTrace();
-         throw e;
-      } finally {
+				customerDto = new CustomerDto(customerNo, customerMno, customerQue, customerAns, customerQdate,
+						customerAdate);
+
+				customerList.add(customerDto);
+			}
+
+			return customerList;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			throw e;
+		} finally {
 //         db 객체 메모리 해제
-         try {
-            if (rs != null) {
-               rs.close();
-            }
-         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-         }
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
-         try {
-            if (pstmt != null) {
-               pstmt.close();
-            }
-         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-         }
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
-      } // finally 종료
+	} // finally 종료
 
-   }
-   
+	
+	public List<CustomerDto> customerAdList() throws Exception {
+
+		PreparedStatement pstmt = null;// 상태
+		ResultSet rs = null;// 요청
+
+		try {
+			String sql = "";
+
+			sql += "SELECT CUSTOMER_NO, CUSTOMER_MNO, CUSTOMER_QUE, CUSTOMER_ANS, CUSTOMER_QDATE, CUSTOMER_ADATE";
+			sql += " FROM CUSTOMER";
+
+			pstmt = connection.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			int customerNo = 0;
+			int customerMno = 0;
+			String customerQue = "";
+			String customerAns = "";
+			Date customerQdate = null;
+			Date customerAdate = null;
+
+			ArrayList<CustomerDto> customerList = new ArrayList<CustomerDto>();
+
+			CustomerDto customerDto = null;
+
+			while (rs.next()) {
+				customerNo = rs.getInt("CUSTOMER_NO");
+				customerMno = rs.getInt("CUSTOMER_MNO");
+				customerQue = rs.getString("CUSTOMER_QUE");
+				customerAns = rs.getString("CUSTOMER_ANS");
+				customerQdate = rs.getDate("CUSTOMER_QDATE");
+				customerAdate = rs.getDate("CUSTOMER_ADATE");
+
+				customerDto = new CustomerDto(customerNo, customerMno, customerQue, customerAns, customerQdate,
+						customerAdate);
+
+				customerList.add(customerDto);
+			}
+
+			return customerList;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			throw e;
+		} finally {
+//             db 객체 메모리 해제
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+
 // 고객센터 조회
 	public CustomerDto customerSelectOne(int customerNo) throws Exception {
 		CustomerDto customerDto = new CustomerDto();
@@ -100,7 +169,7 @@ public class CustomerDao {
 
 		String sql = "";
 
-		sql += "SELECT CUSTOMER_NO, CUSTOMER_QUE, CUSTOMER_ANS, CUSTOMER_QDATE, CUSTOMER_ADATE";
+		sql += "SELECT CUSTOMER_NO, CUSTOMER_MNO, CUSTOMER_QUE, CUSTOMER_ANS, CUSTOMER_QDATE, CUSTOMER_ADATE";
 		sql += " FROM CUSTOMER";
 		sql += " WHERE CUSTOMER_NO = ?";
 
@@ -111,20 +180,21 @@ public class CustomerDao {
 
 			rs = pstmt.executeQuery();
 
+			int customerMno = 0;
 			String customerQue = "";
 			String customerAns = "";
 			Date customerQdate = null;
 			Date customerAdate = null;
 
-
 			if (rs.next()) {
 				customerNo = rs.getInt("CUSTOMER_NO");
+				customerMno = rs.getInt("CUSTOMER_MNO");
 				customerQue = rs.getString("CUSTOMER_QUE");
 				customerAns = rs.getString("CUSTOMER_ANS");
 				customerQdate = rs.getDate("CUSTOMER_QDATE");
 				customerAdate = rs.getDate("CUSTOMER_ADATE");
 
-				customerDto = new CustomerDto(customerNo, customerQue, customerAns, customerQdate, customerAdate);
+				customerDto = new CustomerDto(customerNo, customerMno, customerQue, customerAns, customerQdate, customerAdate);
 			} else {
 				throw new Exception("해당 번호의 회원을 찾을 수 없습니다.");
 			}
@@ -151,8 +221,40 @@ public class CustomerDao {
 
 		return customerDto;
 	}
+	
+	public int customerDelete(int customerNo) {
+		int result = 0;
 
+		PreparedStatement pstmt = null;
 
+		try {
+			String sql = "";
+
+			sql = "DELETE FROM CUSTOMER";
+			sql += " WHERE CUSTOMER_NO = ?";
+
+			pstmt = connection.prepareStatement(sql);
+
+			pstmt.setInt(1, customerNo);
+
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		} // finally end
+
+		return result;
+	}
 
 	// 고객센터 질문 변경
 	public int customerUpdate(CustomerDto customerDto) {
@@ -164,16 +266,13 @@ public class CustomerDao {
 			String sql = "";
 
 			sql += "UPDATE CUSTOMER";
-			sql += " SET CUSTOMER_QUE = ?, CUSTOMER_ANS = ?";
+			sql += " SET CUSTOMER_ANS = ?, CUSTOMER_ADATE = SYSDATE";
 			sql += " WHERE CUSTOMER_NO = ?";
 
 			pstmt = connection.prepareStatement(sql);
 
-			System.out.println(customerDto.getCustomerNo());
-			
-			pstmt.setString(1, customerDto.getCustomerQue());
-			pstmt.setString(2, customerDto.getCustomerAns());
-			pstmt.setInt(3, customerDto.getCustomerNo());
+			pstmt.setString(1, customerDto.getCustomerAns());
+			pstmt.setInt(2, customerDto.getCustomerNo());
 
 			result = pstmt.executeUpdate();
 
@@ -193,46 +292,46 @@ public class CustomerDao {
 
 		return result;
 	}
-	
+
 	// 회원등록
-		public int customerInsert(CustomerDto customerDto) throws Exception {
-			int result = 0;
-			PreparedStatement pstmt = null;
+	public int customerInsert(CustomerDto customerDto) throws Exception {
+		int result = 0;
+		PreparedStatement pstmt = null;
 
-			try {
-				int customerMno = customerDto.getCustomerMno();
-				String customerQue = customerDto.getCustomerQue();
+		try {
+			int customerMno = customerDto.getCustomerMno();
+			String customerQue = customerDto.getCustomerQue();
 
-				System.out.println(customerMno);
-				
-				String sql = "";
+			System.out.println(customerMno);
 
-				sql = "INSERT INTO CUSTOMER (CUSTOMER_NO, CUSTOMER_MNO, CUSTOMER_QUE, CUSTOMER_QDATE) " +
-	                     "VALUES (CUSTOMER_NO_SEQ.NEXTVAL, ?, ?, SYSDATE)";
+			String sql = "";
 
-				pstmt = connection.prepareStatement(sql);
+			sql = "INSERT INTO CUSTOMER (CUSTOMER_NO, CUSTOMER_MNO, CUSTOMER_QUE, CUSTOMER_QDATE) "
+					+ "VALUES (CUSTOMER_NO_SEQ.NEXTVAL, ?, ?, SYSDATE)";
 
-				pstmt.setInt(1, customerMno);
-				pstmt.setString(2, customerQue);
+			pstmt = connection.prepareStatement(sql);
 
-				result = pstmt.executeUpdate();			
-				
-			} catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
-				System.out.println("customerDao customerInsert() 예외 발생");
-			} finally {
-				if (pstmt != null) {
-					try {
-						pstmt.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+			pstmt.setInt(1, customerMno);
+			pstmt.setString(2, customerQue);
+
+			result = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println("customerDao customerInsert() 예외 발생");
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
-
-			return result;
 		}
+
+		return result;
+	}
 
 }

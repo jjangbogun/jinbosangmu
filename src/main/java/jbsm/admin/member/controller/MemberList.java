@@ -1,4 +1,4 @@
-package jbsm.user.member.controller;
+package jbsm.admin.member.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,12 +13,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jbsm.user.member.dao.MemberDao;
 import jbsm.user.member.dto.MemberDto;
+import jbsm.user.notice.dto.NoticeDto;
+import jbsm.user.notice.dto.PageDto;
 
 /**
  * ALT + SHIFT + J : API 주석 회원 목록 조회 구현
  * 
  */
-@WebServlet(value = "/member/list")
+@WebServlet(value = "/admin/member/list")
 public class MemberList extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -31,6 +33,7 @@ public class MemberList extends HttpServlet {
 		Connection conn = null;// 연결
 
 		try {
+			
 			ServletContext sc = this.getServletContext();
 
 //				미리 준비된 DB 객체 불러오기
@@ -38,18 +41,38 @@ public class MemberList extends HttpServlet {
 
 			MemberDao memberDao = new MemberDao();
 			memberDao.setConnection(conn);
-			
+
 //			System.out.println("test");
 
-			ArrayList<MemberDto> memberList = (ArrayList<MemberDto>) memberDao.selectList();
+			String searchField = null;
+			String searchText = null;
+
+			if (request.getParameter("searchText") != null) {
+				searchField = request.getParameter("searchField");
+				searchText = request.getParameter("searchText");
+			}
+
+			int pageNum = 1;
+			int pageSize = 10;
+			int total = memberDao.getTotal(searchField, searchText); // 전체게시글수
+
+			if (request.getParameter("pageNum") != null && request.getParameter("pageSize") != null) {
+				pageNum = Integer.parseInt(request.getParameter("pageNum"));
+				pageSize = Integer.parseInt(request.getParameter("pageSize"));
+			}
+
+			ArrayList<MemberDto> memberList = (ArrayList<MemberDto>) memberDao.selectList(pageNum, pageSize,
+					searchField, searchText);
+
+			PageDto pageDto = new PageDto(pageNum, pageSize, total);
 
 			request.setAttribute("memberList", memberList);
+			request.setAttribute("pageDto", pageDto);
 
 			response.setContentType("text/html");
 			response.setCharacterEncoding("UTF-8");
 
-			RequestDispatcher dispatcher = 
-					request.getRequestDispatcher("/member/MemberList.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/member/MemberList.jsp");
 			dispatcher.include(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,7 +88,7 @@ public class MemberList extends HttpServlet {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	}
 
