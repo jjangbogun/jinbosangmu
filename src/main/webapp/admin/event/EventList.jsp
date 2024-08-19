@@ -29,9 +29,9 @@
 		<table class="table">
 			<thead>
 				<tr style='background: #f6f6f6;'>
-					<th class='w-25' scope="col">번호</th>
-					<th class='w-25' scope="col">관리자명</th>
-					<th class='w-25' scope="col">이메일</th>
+					<th class='w-25' scope="col">이미지</th>
+					<th class='w-25' scope="col">이벤트명</th>
+					<th class='w-25' scope="col">시작일 / 종료일</th>
 					<th class='w-25' scope="col">비고</th>
 				</tr>
 			</thead>
@@ -40,13 +40,18 @@
 			<c:forEach var="eventDto" items="${eventList}" varStatus="i">
 			
 				<tr>
-					<th scope="row"></th>
-					<td>${eventDto.eventName}</td>
-					<td>${eventDto.eventSdate}, ${eventDto.eventEdate}</td>
+					<th scope="row">
+						<div class='mb-2'>
+							<img src="${pageContext.request.contextPath}/upload/${eventDto.eventTimg}" 
+							class="img-fluid" alt="${eventDto.eventName}" style='width:200px;'>
+						</div>
+					</th>
+					<td><div style="margin-top: 60px">${eventDto.eventName}</div></td>
+					<td><div style="margin-top: 60px">${eventDto.eventSdate} / ${eventDto.eventEdate}</div></td>
 					<td>
-						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-secondary btn-sm" onclick='adminModify(${adminDto.adminNo});'>변경</button>
-							<button type="button" class="btn btn-danger btn-sm" onclick='adminDelete(${adminDto.adminNo});'>삭제</button>
+						<div class="btn-group" role="group" style="margin-top: 60px">
+							<button type="button" class="btn btn-secondary btn-sm" onclick='eventModify(${eventDto.eventNo});'>변경</button>
+							<button type="button" class="btn btn-danger btn-sm" onclick='eventDelete(${eventDto.eventNo});'>삭제</button>
 						</div>
 					</td>
 				</tr>
@@ -56,7 +61,10 @@
 			</tbody>
 		</table>
 
-                                    </div>                                   
+                                    </div>    
+        <div class='text-center'>
+			<input type='button' value='신규등록' class='btn btn-secondary' onclick='eventNew();'>
+		</div>                                
                                     
                                    
                                 </div>

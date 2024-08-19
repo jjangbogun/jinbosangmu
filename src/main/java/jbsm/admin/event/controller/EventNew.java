@@ -1,4 +1,4 @@
-package jbsm.user.event.controller;
+package jbsm.admin.event.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -6,14 +6,18 @@ import java.sql.Connection;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+import jbsm.common.FileUpload;
 import jbsm.user.event.dao.EventDao;
 import jbsm.user.event.dto.EventDto;
 
-@WebServlet(value = "/event/new")
+@WebServlet(value = "/admin/event/new")
+@MultipartConfig
 public class EventNew extends HttpServlet {
 
 	@Override
@@ -32,9 +36,16 @@ public class EventNew extends HttpServlet {
 		
 		try {	
 			
+			Part filePart1;
+			Part filePart2;
+			filePart1 = request.getPart("eventTimg");
+			filePart2 = request.getPart("eventDimg");
+			
+			FileUpload fileUpload = new FileUpload();
+			String eventTimg = fileUpload.FileUpload(filePart1);
+			String eventDimg = fileUpload.FileUpload(filePart2);
+			
 			String eventName = request.getParameter("eventName");
-			String eventTimg = request.getParameter("eventTimg");
-			String eventDimg = request.getParameter("eventDimg");
 			String eventSdate = request.getParameter("eventSdate");
 			String eventEdate = request.getParameter("eventEdate");
 			

@@ -114,27 +114,6 @@ function memberSearch() {
 	location.href = setUrl + '/admin/member/list?searchField='+searchField+'&searchText='+searchText;
 }
 
-function memberModify(no){
-   let setUrl = document.getElementById('setUrl').value;
-   
-   location.href = setUrl + '/admin/member/modify?memberNo=' + no;
-}
-
-function memberDelete(no) {
-   if (confirm('선택하신 회원을 삭제 하시겠습니까?')) {
-
-      let form = document.getElementById('deleteForm');
-      let deleteNo = document.getElementById('deleteNo');
-
-      deleteNo.value = no;
-
-      form.submit();
-   }
-   else {
-      alert('삭제가 취소 되었습니다!');
-      return;
-   }
-}
 //notice
 
 function noticeList() {
@@ -150,31 +129,6 @@ function noticeSearch() {
 	let setUrl = document.getElementById('setUrl').value;
 	
 	location.href = setUrl + '/admin/notice/list?searchField='+searchField+'&searchText='+searchText;
-}
-
-
-function noticeNew() {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/new';
-}
-
-function noticeModify(no) {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/modify?noticeNo=' + no;
-}
-
-function noticeDelete(no) {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/delete?noticeNo=' + no;
-}
-
-function noticeList() {
-
-	let setUrl = document.getElementById('setUrl').value;
-	location.href = setUrl + '/admin/notice/list';
 }
 
 //event
@@ -193,8 +147,6 @@ function eventSearch() {
 	
 	location.href = setUrl + '/admin/event/list?searchField='+searchField+'&searchText='+searchText;
 }
-
-
 
 function eventNew() {
 
@@ -286,7 +238,7 @@ function modifyEventCheck() {
 	}
 }
 
-function eventDelete(no) {
+/*function eventDelete(no) {
 
 	if (confirm('선택하신 이벤트를 삭제 하시겠습니까?')) {
 
@@ -301,8 +253,21 @@ function eventDelete(no) {
 		alert('삭제가 취소 되었습니다!');
 		return;
 	}
-}
+}*/
 
+function eventDelete(no) {
+
+/*	if (confirm('선택하신 이벤트를 삭제 하시겠습니까?')) {*/
+
+		let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/event/delete?eventNo=' + no;
+/*	}
+	else {
+		alert('삭제가 취소 되었습니다!');
+		return;
+	}*/
+
+}
 //customer
 
 function customerList() {
@@ -320,6 +285,29 @@ function customerSearch() {
 	location.href = setUrl + '/admin/customer/list?searchField='+searchField+'&searchText='+searchText;
 }
 
+function noticeNew() {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/new';
+}
+
+function noticeModify(no) {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/modify?noticeNo=' + no;
+}
+
+function noticeDelete(no) {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/delete?noticeNo=' + no;
+}
+
+function noticeList() {
+
+	let setUrl = document.getElementById('setUrl').value;
+	location.href = setUrl + '/admin/notice/list';
+}
 
 function customerModify(no) {
 

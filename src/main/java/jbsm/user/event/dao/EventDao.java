@@ -18,7 +18,6 @@ public class EventDao {
       this.connection = conn;
    }
 
-   // 이벤트 리스트
    public List<EventDto> eventList() throws Exception {
 
       PreparedStatement pstmt = null;// 상태
@@ -90,7 +89,6 @@ public class EventDao {
 
    }
 
-   // 이벤트 추가
    public int eventInsert(EventDto eventDto) throws Exception {
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -237,45 +235,59 @@ public class EventDao {
 
 
 
-	// 이벤트 수정
-	public int eventUpdate(EventDto eventDto) {
-		int result = 0;
+	//이벤트 정보 변경
+		public int eventUpdate(EventDto eventDto) throws Exception {
 
-		PreparedStatement pstmt = null;// 상태
+			int result = 0;
+			
+			PreparedStatement pstmt = null;
+			
+			try {
+				
+				int eventNo 		= eventDto.getEventNo();
+				String eventName 	= eventDto.getEventName();
+				String eventTimg 	= eventDto.getEventTimg();
+				String eventDimg 	= eventDto.getEventDimg();
+				String eventSdate 	= eventDto.getEventSdate();
+				String eventEdate 	= eventDto.getEventEdate();
 
-		try {
-			String sql = "";
+				String sql = "";
 
-			sql += "UPDATE EVENT";
-			sql += " SET EVENT_NAME = ?, EVENT_TIMG = ?, EVENT_DIMG = ?, EVENT_SDATE = ?, EVENT_EDATE = ?";
-			sql += " WHERE EVENT_NO = ?";
-
-			pstmt = connection.prepareStatement(sql);
-
-			pstmt.setString(1, eventDto.getEventName());
-			pstmt.setString(2, eventDto.getEventTimg());
-			pstmt.setString(3, eventDto.getEventDimg());
-			pstmt.setString(4, eventDto.getEventSdate());
-			pstmt.setString(5, eventDto.getEventEdate());
-			pstmt.setInt(6, eventDto.getEventNo());
-
-			result = pstmt.executeUpdate();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				sql += "UPDATE EVENT SET EVENT_NAME='" + eventName + "'";
+				if (eventTimg != null) {
+					sql += ", EVENT_TIMG='" + eventTimg + "'";
 				}
+				if (eventDimg != null) {
+					sql += ", EVENT_DIMG='" + eventDimg + "'";
+				}
+				sql += ", EVENT_SDATE='" + eventSdate + "'";
+				sql += ", EVENT_EDATE='" + eventEdate + "'";
+				sql += " WHERE EVENT_NO=?";
+
+				pstmt = connection.prepareStatement(sql);
+				
+				pstmt.setInt(1, eventNo);
+				
+				result = pstmt.executeUpdate();
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+				System.out.println("eventUpdate 예외 발생");
+					
+			}finally {
+				
+				if(pstmt != null) {
+					try {
+						pstmt.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				
 			}
 
-		} // finally 종료
-
-		return result;
-	}
+			return result;
+		}
    
 }
