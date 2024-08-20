@@ -55,8 +55,8 @@
 			    	<c:forEach var="eventDto" items="${eventList}">
 				    	<div class="col-md-6 text-center mb-5">
 				    		<a href='./detail?eventNo=${eventDto.eventNo}'>
-					    		<img alt="event" class="etImg"				    		
-					             src="${pageContext.request.contextPath}/imgs/${eventDto.eventTimg}">
+				    		<img alt="event" class="etImg" style="border: 1px solid black"				    		
+				             src="${pageContext.request.contextPath}/upload/${eventDto.eventTimg}">
 							</a>
 				            <p class="etPTag">${eventDto.eventName}</p>				            				            
 				    	</div>

@@ -59,7 +59,7 @@
 					</li>
 					<li class="list-group-item">						
 						<img alt="event"			    		
-				             src="${pageContext.request.contextPath}/imgs/${eventDto.eventTimg}">							
+				             src="${pageContext.request.contextPath}/upload/${eventDto.eventDimg}">							
 					</li>
 				</ul>
 			</div>

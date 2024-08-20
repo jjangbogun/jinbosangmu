@@ -90,11 +90,11 @@
 
 <script>
 	$(function(){
-	  	$('#eventSDate').datepicker({
+	  	$('#eventSdate').datepicker({
 		    format: 'yyyy-mm-dd',
 		    autoclose: true
 		});
-	  	$('#eventEDate').datepicker({
+	  	$('#eventEdate').datepicker({
 		    format: 'yyyy-mm-dd',
 		    autoclose: true
 		});
