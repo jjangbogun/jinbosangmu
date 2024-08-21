@@ -124,10 +124,6 @@ function customerNewFnc() {
    location.href = "./new";
 }
 
-function customerListFnc() {
-   location.href = "./list";
-}
-
 /*이벤트 추가*/
 function eventAddFnc() {
    location.href = "./new";
@@ -138,4 +134,96 @@ function eventListFnc() {
    location.href = "./list";
 }
 
+function customerListFnc() {
+   location.href = "./list";
+}
 
+function reserveNew(no) {
+   location.href = "../reserve/new?promotionNo=" + no;
+}
+
+/*reserve*/
+function getDateStr(setN) {
+
+   if (setN == 0) {
+      var setDate = new Date();
+   } else if (setN == 1) {
+      var today = new Date();
+      var setDate = new Date(today.setDate(today.getDate() + 1));
+   }
+
+   let year = setDate.getFullYear();
+   let month = (setDate.getMonth() + 1).toString().padStart(2, '0');
+   let day = setDate.getDate().toString().padStart(2, '0');
+   let getDateStr = year + '-' + month + '-' + day;
+   return getDateStr;
+}
+
+function getDateDiff(d1, d2) {
+
+   const date1 = new Date(d1);
+   const date2 = new Date(d2);
+   const diffDate = date1.getTime() - date2.getTime();
+   return Math.abs(diffDate / (1000 * 60 * 60 * 24));
+}
+
+function checkSdate(thisInput) {
+
+   var chkValue = thisInput.value;
+   var reserveSdate = chkValue.substring(0, 10);
+   var reserveEdate = chkValue.substring(13, 23);
+   $('#reserveSdate').val(reserveSdate);
+   $('#reserveEdate').val(reserveEdate);
+   $('#reserveFea').val(getDateDiff(reserveSdate, reserveEdate));
+   totalSum();
+}
+
+function checkBea(thisInput) {
+
+   $('#reserveBea').val(thisInput.value);
+   totalSum();
+}
+
+function totalSum() {
+
+   let totalSum = 0;
+   let totalSumF = 0;
+   let totalSumB = 0;
+   let reserveFea = $('#reserveFea').val();
+   let reserveFee = $('#reserveFee').val();
+   let reserveBea = $('#reserveBea').val();
+   let reserveBcost = $('#reserveBcost').val();
+
+   totalSumF = reserveFea * reserveFee;
+   totalSumB = (reserveBea * reserveBcost) * reserveFea
+   totalSum = totalSumF + totalSumB
+
+   $('#reserveSum').val(totalSum);
+
+   $('#innerFea').html(reserveFea + ' 박');
+   $('#innerBea').html('조식 ' + reserveBea + ' X 박');
+   $('#innerFee').html(totalSumF.toLocaleString() + ' 원');
+   $('#innerBcost').html(totalSumB.toLocaleString() + ' 원');
+   $('#innerSum').html(totalSum.toLocaleString() + ' 원');
+}
+
+function promotionList(){
+   location.href = "../promotion/list";
+}
+
+function checkSdate(date) {
+   let d = new Date(date.value);
+   d.setDate(d.getDate() + 1);
+   
+   let year    = d.getFullYear();
+   let month   = ('0' + (d.getMonth() +  1 )).slice(-2);
+   let day     = ('0' + d.getDate()).slice(-2);
+   dt = year+"-"+month+"-"+day;
+   $('#checkEdate').val(dt);
+}
+
+function newCheck() {
+   let checkAdd = $('#checkAdd').val();
+   
+   $('#reserveAdd').val(checkAdd);
+}

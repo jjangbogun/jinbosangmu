@@ -114,6 +114,28 @@ function memberSearch() {
 	location.href = setUrl + '/admin/member/list?searchField='+searchField+'&searchText='+searchText;
 }
 
+function memberModify(no){
+   let setUrl = document.getElementById('setUrl').value;
+   
+   location.href = setUrl + '/admin/member/modify?memberNo=' + no;
+}
+
+function memberDelete(no) {
+   if (confirm('선택하신 회원을 삭제 하시겠습니까?')) {
+
+      let form = document.getElementById('deleteForm');
+      let deleteNo = document.getElementById('deleteNo');
+
+      deleteNo.value = no;
+
+      form.submit();
+   }
+   else {
+      alert('삭제가 취소 되었습니다!');
+      return;
+   }
+}
+
 //notice
 
 function noticeList() {
@@ -257,15 +279,15 @@ function modifyEventCheck() {
 
 function eventDelete(no) {
 
-/*	if (confirm('선택하신 이벤트를 삭제 하시겠습니까?')) {*/
+	if (confirm('선택하신 이벤트를 삭제 하시겠습니까?')) {
 
 		let setUrl = document.getElementById('setUrl').value;
 	location.href = setUrl + '/admin/event/delete?eventNo=' + no;
-/*	}
+	}
 	else {
 		alert('삭제가 취소 되었습니다!');
 		return;
-	}*/
+	}
 
 }
 //customer
@@ -319,4 +341,56 @@ function customerDelete(no) {
 
 	let setUrl = document.getElementById('setUrl').value;
 	location.href = setUrl + '/admin/customer/delete?customerNo=' + no;
+}
+
+//hotel
+
+function hotelList(){
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/hotel/list';
+}
+
+function hotelModify(no) {
+
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/hotel/modify?hotelNo=' + no;
+}
+
+function hotelNew() {
+
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/hotel/new';
+}
+
+
+//promotion
+
+function promotionList(){
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/promotion/list';
+}
+
+function promotionModify(no) {
+
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/promotion/modify?promotionNo=' + no;
+}
+
+function promotionNew() {
+
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/promotion/new';
+}
+
+//reserve
+
+function reserveList() {
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/reserve/list';
+}
+
+function reserveModify(no) {
+
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/admin/reserve/modify?reserveNo=' + no;
 }

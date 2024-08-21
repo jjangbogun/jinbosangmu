@@ -25,14 +25,20 @@
                     <span>관리자 설정</span></a>
             </li>
             
+           <li class="nav-item">
+                <a class="nav-link" href="#" onclick='hotelList();'>
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>호텔 관리</span></a>
+            </li>
+            
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick='promotionList();'>
                     <i class="fas fa-fw fa-table"></i>
                     <span>패키지 관리</span></a>
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick='reserveList();'>
                     <i class="fas fa-fw fa-table"></i>
                     <span>예약 관리</span></a>
             </li>
@@ -124,7 +130,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="./admin/logout">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/admin/logout">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

@@ -32,7 +32,7 @@
 				</c:choose>
 			
 				<li><a href="#">호텔 소개</a></li>
-				<li><a href="#">패키지 상품</a></li>
+				<li><a href="../promotion/list">패키지 상품</a></li>
 				<li><a href="../event/list">이벤트</a></li>
 				<li>
 					<%
@@ -75,7 +75,7 @@
 					<div class="nav-menu ml-auto">
 						<ul class="">
 							<li class="nav-menu-item"><a href="sampleReservation.jsp">호텔 소개</a></li>
-							<li class="nav-menu-item"><a href="samplePackage.jsp">패키지 상품</a></li>
+							<li class="nav-menu-item"><a href="../promotion/list">패키지 상품</a></li>
 							<li class="nav-menu-item"><a href="../event/list">이벤트</a>
 							<li class="nav-menu-item"><a href="../notice/list">공지사항</a></li>
 							<li class="nav-menu-item">
