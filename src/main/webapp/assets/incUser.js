@@ -257,3 +257,13 @@ function newCheck() {
    
    $('#reserveAdd').val(checkAdd);
 }
+
+function sendEventListFnc() {
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/event/list';
+}
+
+function sendMemberNew() {
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/new';
+}
