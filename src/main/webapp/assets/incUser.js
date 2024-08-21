@@ -2,102 +2,119 @@
  * 
  */
 /*헤더 함수*/
-function top_user_login(){
-	location.href = "../member/login";
+function top_user_login() {
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/login';
+}
+
+function main_content(){
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/event/list';
+}
+
+function top_sub_introduce(){
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/new';
 }
 
 /*로그인이 필요한 경우 로그인 창으로 이동*/
 function sendLoginFnc() {
-	alert("로그인이 필요합니다");
-	location.href = "../member/login";
+   alert("로그인이 필요합니다");
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/login';
 }
 
 /*로그인 체크*/
 function loginCheckFnc() {
-	var loginCheck = document.getElementById("loginCheck").value;
-	let memberEmail = document.getElementById('memberEmail').value;
-	let memberPw = document.getElementById('memberPw').value;
-	
-	let securePw = null;
-	securePw = CryptoJS.SHA256(memberPw);
-	document.getElementById('securePw').value = securePw;
-	
-	if(memberEmail.length < 1){
-		alert("이메일을 입력하세요");
-		return false;
-	}
-	
-	if(memberPw.length < 1){
-		alert("비밀번호를 입력하세요");
-		return false;
-	}
+   var loginCheck = document.getElementById("loginCheck").value;
+   let memberEmail = document.getElementById('memberEmail').value;
+   let memberPw = document.getElementById('memberPw').value;
+
+   let securePw = null;
+   securePw = CryptoJS.SHA256(memberPw);
+   document.getElementById('securePw').value = securePw;
+
+   if (memberEmail.length < 1) {
+      alert("이메일을 입력하세요");
+      return false;
+   }
+
+   if (memberPw.length < 1) {
+      alert("비밀번호를 입력하세요");
+      return false;
+   }
 
 }
 
 /*로그인 실패*/
-function loginFnc() {		
-	location.href = '<%=request.getContextPath()%>/member/LoginForm.jsp';
+function loginFnc() {
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/login';
+/*   location.href = '<%=request.getContextPath()%>/member/LoginForm.jsp';*/
 }
 
 /*로그아웃*/
 function top_user_logout() {
-	location.href = "../member/logout";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/logout';
 }
 
 /*회원 정보수정 이동*/
 function top_user_modify(no) {
-	location.href = "../member/modify?memberNo="+no;
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/modify?memberNo=' + no;
 }
 
 /*회원가입 체크*/
-function memberNewCheckFnc(){
-	let memberEmail = document.getElementById('memberEmail').value;
-	let memberName = document.getElementById('memberName').value;
-	let memberPw = document.getElementById('memberPw').value;
-	let memberPwc = document.getElementById('memberPwc').value;
-	let phoneNum2 = document.getElementById('phoneNum2').value;
-	let phoneNum3 = document.getElementById('phoneNum3').value;
-	
-	let securePw = null;
-	securePw = CryptoJS.SHA256(memberPw);
-	document.getElementById('securePw').value = securePw;
-	
-	if(memberEmail.length < 1){
-		alert("이메일을 입력하세요");
-		return false;
-	}
-	
-	if(memberName.length < 1){
-		alert("이름 입력하세요");
-		return false;
-	}
-	
-	if(memberPw.length < 1){
-		alert("비밀번호를 입력하세요");
-		return false;
-	}
-	
-	if(memberPwc.length < 1){
-		alert("비밀번호 확인을 입력하세요");
-		return false;
-	}
-	
-	if(phoneNum2.length <= 3 || phoneNum3.length <= 3){
-		alert("전화번호를 입력하세요");
-		return false;
-	}
-	
-	if(memberPw != memberPwc){
-		alert("비밀번호가 서로 일치하지 않습니다");
-		return false;
-	}
-	
-	return;
+function memberNewCheckFnc() {
+   let memberEmail = document.getElementById('memberEmail').value;
+   let memberName = document.getElementById('memberName').value;
+   let memberPw = document.getElementById('memberPw').value;
+   let memberPwc = document.getElementById('memberPwc').value;
+   let phoneNum2 = document.getElementById('phoneNum2').value;
+   let phoneNum3 = document.getElementById('phoneNum3').value;
+
+   let securePw = null;
+   securePw = CryptoJS.SHA256(memberPw);
+   document.getElementById('securePw').value = securePw;
+
+   if (memberEmail.length < 1) {
+      alert("이메일을 입력하세요");
+      return false;
+   }
+
+   if (memberName.length < 1) {
+      alert("이름 입력하세요");
+      return false;
+   }
+
+   if (memberPw.length < 1) {
+      alert("비밀번호를 입력하세요");
+      return false;
+   }
+
+   if (memberPwc.length < 1) {
+      alert("비밀번호 확인을 입력하세요");
+      return false;
+   }
+
+   if (phoneNum2.length <= 3 || phoneNum3.length <= 3) {
+      alert("전화번호를 입력하세요");
+      return false;
+   }
+
+   if (memberPw != memberPwc) {
+      alert("비밀번호가 서로 일치하지 않습니다");
+      return false;
+   }
+
+   return;
 }
 
 /*공지사항 목록으로 이동*/
-function noticeListFnc() {		
-	location.href = '../notice/list';
+function noticeListFnc() {
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/notice/list';
 }
 
 /*공지사항 페이지 이동 함수*/
@@ -105,41 +122,48 @@ function noticeSearch() {
 
    let searchField = document.getElementById('searchField').value;
    let searchText = document.getElementById('searchText').value;
-   
-   location.href = '../notice/list?searchField='+searchField+'&searchText='+searchText;
+
+   location.href = '../notice/list?searchField=' + searchField + '&searchText=' + searchText;
 
 }
 
 /*회원가입 페이지 이동 함수*/
 function memberAddFnc() {
-	location.href = "./new";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/member/new';
 }
 
 function pageMoveListFnc() {
-	location.href="../main";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/main';
 }
 
 /*문의 하기 이동*/
 function customerNewFnc() {
-   location.href = "./new";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/customer/new';
 }
 
 /*이벤트 추가*/
 function eventAddFnc() {
-   location.href = "./new";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/event/new';
 }
 
 
 function eventListFnc() {
-   location.href = "./list";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/event/list';
 }
 
 function customerListFnc() {
-   location.href = "./list";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/customer/list';
 }
 
 function reserveNew(no) {
-   location.href = "../reserve/new?promotionNo=" + no;
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/reserve/new?promotionNo=' + no;
 }
 
 /*reserve*/
@@ -208,10 +232,13 @@ function totalSum() {
 }
 
 function promotionList(){
-   location.href = "../promotion/list";
+   let setUrl = document.getElementById('setUrl').value;
+   location.href = setUrl + '/promotion/list';
 }
 
 function checkSdate(date) {
+   let sdate = date.value;
+   
    let d = new Date(date.value);
    d.setDate(d.getDate() + 1);
    
@@ -220,6 +247,9 @@ function checkSdate(date) {
    let day     = ('0' + d.getDate()).slice(-2);
    dt = year+"-"+month+"-"+day;
    $('#checkEdate').val(dt);
+   
+   $('#reserveSdate').val(sdate);
+   $('#reserveEdate').val(dt);
 }
 
 function newCheck() {

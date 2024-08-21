@@ -10,6 +10,10 @@
     </div>
     <!-- Site Wraper End -->
 
+	<form name='setForm' id='setForm' method='post' onSubmit='return false;'>
+		<input type='hidden' id='setUrl' name='setUrl' value='${pageContext.request.contextPath}'>
+	</form>
+	
     <!-- JS -->
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/plugin/jquery.easing.js" type="text/javascript"></script>

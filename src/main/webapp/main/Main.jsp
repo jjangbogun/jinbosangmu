@@ -45,7 +45,7 @@
                     			<p class="lead">진보상무</p>
                                 <h2>국내 최고의 럭셔리 비즈니스 호텔인 진보상무는 1,015실 규모를 자랑하며<br>서울 구로동에 자리잡고 있습니다.</h2>
                                 <br />
-                                <div class="xs-hidden"><a class="btn btn-outline-light" onclick="main_content();">자세히보기</a></div>
+                                <div class="xs-hidden"><a class="btn btn-outline-light" onclick="sendEventListFnc();">자세히보기</a></div>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <p class="lead">진보상무 워터파크</p>
                                         <h2>진보상무 워터파크는 강서구의 랜드마크 '까치산'에 위치한<br> 260실 규모의 럭셔리 워터파크 입니다.</h2>
                                         <br />
-                                        <div class="xs-hidden"><a class="btn btn-outline-light" onclick="main_content();">자세히보기</a></div>
+                                        <div class="xs-hidden"><a class="btn btn-outline-light" onclick="sendEventListFnc();">자세히보기</a></div>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                     			<p class="lead">진보상무 스파</p>
                                         <h2>패션쇼 런웨이처럼 화려한 유행의 거리 강서. 이 감각적인 도시의 문화를 닮은 진보상무 스파는<br> 서울 강서의 중심에 위치한 라이프 스타일 스파입니다.</h2>
                                         <br />
-                                        <div class="xs-hidden"><a class="btn btn-outline-light" onclick="main_content();">자세히보기</a></div>
+                                        <div class="xs-hidden"><a class="btn btn-outline-light" onclick="sendEventListFnc();">자세히보기</a></div>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                         <h4 class="text-s-white">진보상무 회원 가입하고, 선물 받아 가세요!</h4>
                     </div>
                     <div class="col-md-4 col-sm-4 mt20 text-right">
-            <a class="btn btn-outline-light" onclick="top_sub_introduce();">자세히 보기</a>
+            <a class="btn btn-outline-light" onclick="sendMemberNew();">자세히 보기</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,18 @@
         <!-- Content Section -->
         <section class="ptb ptb-sm-40" style='background: #fcfcfc;'>
             <div class="container">
-
+				
+				<div class="row mt-5">
+			    	<c:forEach var="eventDto" items="${eventList}">
+				    	<div class="col-md-6 text-center mb-5">
+				    		<a href='${pageContext.request.contextPath}/event/detail?eventNo=${eventDto.eventNo}'>
+				    		<img alt="event" class="etImg" style="border: 1px solid black"				    		
+				             src="${pageContext.request.contextPath}/upload/${eventDto.eventTimg}">
+							</a>
+				            <p class="etPTag">${eventDto.eventName}</p>				            				            
+				    	</div>
+					</c:forEach>
+			    </div>
 
 			</div>
        		

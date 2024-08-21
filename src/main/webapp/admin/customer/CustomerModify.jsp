@@ -46,8 +46,7 @@
 	
 					<tr id="ntSecondTr">
 						<td>
-							<input type='text' name='customerAns' id='customerAns'
-								value='${customerDto.customerAns}'>
+							<textarea rows="10" class="col-12" name='customerAns' id='customerAns'>${customerDto.customerAns}</textarea>
 						</td>
 					</tr>
 	

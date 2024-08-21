@@ -22,18 +22,18 @@
 			<ul>
 				<c:choose>
 				    <c:when test="${sessionScope.memberNo == null}">
-				        <li><a href="#" onclick='top_user_login();'>로그인</a></li>
+				        <li><a href="${pageContext.request.contextPath}/member/login" >로그인</a></li>
 				    </c:when>
 				    <c:otherwise>
 				        <li>${sessionScope.memberName}님 반갑습니다!</li>
-				        <li><a href="#" onclick='top_user_logout();'>로그아웃</a></li>
+				        <li><a href="${pageContext.request.contextPath}/member/logout" >로그아웃</a></li>
 				        <li><a href="#" onclick='top_user_modify(${sessionScope.memberNo});'>정보변경</a></li>
 				    </c:otherwise>
 				</c:choose>
 			
 				<li><a href="#">호텔 소개</a></li>
-				<li><a href="../promotion/list">패키지 상품</a></li>
-				<li><a href="../event/list">이벤트</a></li>
+				<li><a href="${pageContext.request.contextPath}/promotion/list">패키지 상품</a></li>
+				<li><a href="${pageContext.request.contextPath}/event/list">이벤트</a></li>
 				<li>
 					<%
 					if (session.getAttribute("memberName") == null) {
@@ -42,7 +42,7 @@
 					<%
 					} else {
 					%>
-						<a href="../customer/list">1:1 문의</a>
+						<a href="${pageContext.request.contextPath}/customer/list">1:1 문의</a>
 					<%
 					}
 					%>
@@ -75,9 +75,9 @@
 					<div class="nav-menu ml-auto">
 						<ul class="">
 							<li class="nav-menu-item"><a href="sampleReservation.jsp">호텔 소개</a></li>
-							<li class="nav-menu-item"><a href="../promotion/list">패키지 상품</a></li>
-							<li class="nav-menu-item"><a href="../event/list">이벤트</a>
-							<li class="nav-menu-item"><a href="../notice/list">공지사항</a></li>
+							<li class="nav-menu-item"><a href="${pageContext.request.contextPath}/promotion/list">패키지 상품</a></li>
+							<li class="nav-menu-item"><a href="${pageContext.request.contextPath}/event/list">이벤트</a>
+							<li class="nav-menu-item"><a href="${pageContext.request.contextPath}/notice/list">공지사항</a></li>
 							<li class="nav-menu-item">
 							<%
 							if (session.getAttribute("memberName") == null) {
@@ -86,7 +86,7 @@
 							<%
 							} else {
 							%>
-								<a href="../customer/list">1:1 문의</a>
+								<a href="${pageContext.request.contextPath}/customer/list">1:1 문의</a>
 							<%
 							}
 							%>
