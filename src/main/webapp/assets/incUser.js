@@ -267,3 +267,20 @@ function sendMemberNew() {
    let setUrl = document.getElementById('setUrl').value;
    location.href = setUrl + '/member/new';
 }
+
+function emailCheck() {
+   let memberEmail = $('#memberEmail').val();
+   
+   if (memberEmail.length < 1) {
+      alert("이메일을 입력하세요");
+      return false;
+   }
+   
+   $('#emaildup').val(memberEmail);
+   
+   let form = document.getElementById('emailcheck');
+   form.action = 'emailcheck';
+   form.method = 'POST';
+   
+   form.submit();
+}

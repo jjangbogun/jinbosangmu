@@ -428,4 +428,52 @@ public class MemberDao {
 
 		return result;
 	}
+	
+	public int memberMailCheck(String emaildup) throws Exception {
+	      int result = 0;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+
+	      String sql = "";
+
+	      sql += "SELECT MEMBER_NO";
+	      sql += " FROM MEMBER";
+	      sql += " WHERE MEMBER_EMAIL= ?";
+
+	      try {
+	         pstmt = connection.prepareStatement(sql);
+
+	         pstmt.setString(1, emaildup);
+
+	         rs = pstmt.executeQuery();
+
+
+	         if (rs.next()) {
+	            result = 1;
+	         } else {
+	            result = 0;
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         throw e;
+	      } finally {
+	         try {
+	            if (rs != null) {
+	               rs.close();
+	            }
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+
+	         try {
+	            if (pstmt != null) {
+	               pstmt.close();
+	            }
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      } // finally 종료
+
+	      return result;
+	   }
 }
