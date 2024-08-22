@@ -108,7 +108,11 @@ function memberNewCheckFnc() {
       return false;
    }
 
-   return;
+   let form = document.getElementById('memberform');
+   form.action = 'new';
+   form.method = 'POST';
+   
+   form.submit();
 }
 
 /*공지사항 목록으로 이동*/
