@@ -31,7 +31,7 @@ public class MemberDup extends HttpServlet {
       
       try {
          
-         String emaildup = request.getParameter("memberEmail");    
+         String emaildup = request.getParameter("memberEmail").trim();    
          
          ServletContext sc = this.getServletContext();   
          conn = (Connection)sc.getAttribute("conn");

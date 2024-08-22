@@ -26,7 +26,8 @@
 function ajaxValidEmail(chk_n)
 {
    let setUrl = document.getElementById('setUrl').value;
-   let email = $.trim($('#memberEmail').val()); 
+   let email = $.trim($('#memberEmail').val());
+   $('#memberEmail').val(email);
    if (email == 0)
    {
       /* $('#emailChk').html("<div class='alert alert-danger'>아이디(이메일)를 입력해 주세요!</div>");
@@ -118,7 +119,7 @@ function ajaxValidEmail(chk_n)
    
           <h1>회원가입</h1>
           
-          <form action='new' id='memberform' name='memberform' method='post' onsubmit="return memberNewCheckFnc();">
+          <form action='new' id='memberform' name='memberform' method='post' onsubmit="return false;">
                 <input type='hidden' name='securePw' id='securePw' value=''>
                 <label>이메일</label>
                 <input type='text' name='memberEmail' id='memberEmail' value='' onblur="ajaxValidEmail();" class='form-control col-6'>
@@ -153,7 +154,7 @@ function ajaxValidEmail(chk_n)
                 <label>상세주소</label>
                 <input type='text' name='memberAddr2' id='memberAddr2' value='' 
                    class='form-control'>
-                <input type='submit' value='가입' class='btn btn-brown'>
+                <input type='button' value='가입' class='btn btn-brown' onclick='memberNewCheckFnc();'>
                 <input type='reset' value='취소' class='btn btn-brown'>
           </form>
           <form action='emailcheck' id='emailcheck' name='emailcheck' method='post' onsubmit="return false;">
