@@ -31,7 +31,6 @@
 				    </c:otherwise>
 				</c:choose>
 			
-				<li><a href="#">호텔 소개</a></li>
 				<li><a href="${pageContext.request.contextPath}/promotion/list">패키지 상품</a></li>
 				<li><a href="${pageContext.request.contextPath}/event/list">이벤트</a></li>
 				<li>
