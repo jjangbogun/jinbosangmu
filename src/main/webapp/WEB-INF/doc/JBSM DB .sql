@@ -1,4 +1,4 @@
---°ü¸®ÀÚ Å×ÀÌºí »ý¼º==============================================================================
+--ê´€ë¦¬ìž í…Œì´ë¸” ìƒì„±==============================================================================
 CREATE TABLE ADMIN(
   ADMIN_NO NUMBER NOT NULL,
   ADMIN_EMAIL VARCHAR2(100) NOT NULL,
@@ -16,9 +16,9 @@ START WITH 1;
 
 INSERT INTO ADMIN
 VALUE( ADMIN_NO, ADMIN_EMAIL, ADMIN_PW, ADMIN_NAME)
-VALUES(ADMIN_NO_SEQ.NEXTVAL, 'KBG@jbsm.com', '1234', '±èº¸±Ù');
+VALUES(ADMIN_NO_SEQ.NEXTVAL, 'KBG@jbsm.com', '1234', 'ê¹€ë³´ê·¼');
 
--- °øÁö»çÇ× Å×ÀÌºí »ý¼º=========================================================================
+-- ê³µì§€ì‚¬í•­ í…Œì´ë¸” ìƒì„±=========================================================================
 CREATE TABLE NOTICE(
   NOTICE_NO NUMBER NOT NULL,
   NOTICE_TITLE VARCHAR2(100) NOT NULL,
@@ -36,64 +36,64 @@ START WITH 1;
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, 'Áøº¸»ó¹«¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù', 'ÆÀ¿ø ±èº¸±Ù, ±èÁø¿ì, ÀÌ»óÇö, Á¶¹«¿¬ ±â¸´', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ì§„ë³´ìƒë¬´ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤', 'íŒ€ì› ê¹€ë³´ê·¼, ê¹€ì§„ìš°, ì´ìƒí˜„, ì¡°ë¬´ì—° ê¸°ë¦¿', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '¹ßÀüÇÏ´Â Áøº¸»ó¹«', '¾ÕÀ¸·Î ´õ ¹ßÀüÇÏ´Â Áøº¸»ó¹«°¡ µÇ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ì•žìœ¼ë¡œ ë” ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´ê°€ ë˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '±â´ë¿¡ ºÎÀÀÇÏ´Â Áøº¸»ó¹«', '¸ðµç °í°´´ÔµéÀÇ ±â´ë¿¡ º¸´äÇÏ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ê¸°ëŒ€ì— ë¶€ì‘í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ëª¨ë“  ê³ ê°ë‹˜ë“¤ì˜ ê¸°ëŒ€ì— ë³´ë‹µí•˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, 'Áøº¸»ó¹«¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù', 'ÆÀ¿ø ±èº¸±Ù, ±èÁø¿ì, ÀÌ»óÇö, Á¶¹«¿¬ ±â¸´', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ì§„ë³´ìƒë¬´ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤', 'íŒ€ì› ê¹€ë³´ê·¼, ê¹€ì§„ìš°, ì´ìƒí˜„, ì¡°ë¬´ì—° ê¸°ë¦¿', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '¹ßÀüÇÏ´Â Áøº¸»ó¹«', '¾ÕÀ¸·Î ´õ ¹ßÀüÇÏ´Â Áøº¸»ó¹«°¡ µÇ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ì•žìœ¼ë¡œ ë” ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´ê°€ ë˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '±â´ë¿¡ ºÎÀÀÇÏ´Â Áøº¸»ó¹«', '¸ðµç °í°´´ÔµéÀÇ ±â´ë¿¡ º¸´äÇÏ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ê¸°ëŒ€ì— ë¶€ì‘í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ëª¨ë“  ê³ ê°ë‹˜ë“¤ì˜ ê¸°ëŒ€ì— ë³´ë‹µí•˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, 'Áøº¸»ó¹«¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù', 'ÆÀ¿ø ±èº¸±Ù, ±èÁø¿ì, ÀÌ»óÇö, Á¶¹«¿¬ ±â¸´', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ì§„ë³´ìƒë¬´ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤', 'íŒ€ì› ê¹€ë³´ê·¼, ê¹€ì§„ìš°, ì´ìƒí˜„, ì¡°ë¬´ì—° ê¸°ë¦¿', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '¹ßÀüÇÏ´Â Áøº¸»ó¹«', '¾ÕÀ¸·Î ´õ ¹ßÀüÇÏ´Â Áøº¸»ó¹«°¡ µÇ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ì•žìœ¼ë¡œ ë” ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´ê°€ ë˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '±â´ë¿¡ ºÎÀÀÇÏ´Â Áøº¸»ó¹«', '¸ðµç °í°´´ÔµéÀÇ ±â´ë¿¡ º¸´äÇÏ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ê¸°ëŒ€ì— ë¶€ì‘í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ëª¨ë“  ê³ ê°ë‹˜ë“¤ì˜ ê¸°ëŒ€ì— ë³´ë‹µí•˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, 'Áøº¸»ó¹«¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù', 'ÆÀ¿ø ±èº¸±Ù, ±èÁø¿ì, ÀÌ»óÇö, Á¶¹«¿¬ ±â¸´', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ì§„ë³´ìƒë¬´ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤', 'íŒ€ì› ê¹€ë³´ê·¼, ê¹€ì§„ìš°, ì´ìƒí˜„, ì¡°ë¬´ì—° ê¸°ë¦¿', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '¹ßÀüÇÏ´Â Áøº¸»ó¹«', '¾ÕÀ¸·Î ´õ ¹ßÀüÇÏ´Â Áøº¸»ó¹«°¡ µÇ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ì•žìœ¼ë¡œ ë” ë°œì „í•˜ëŠ” ì§„ë³´ìƒë¬´ê°€ ë˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
 
 INSERT INTO NOTICE
 VALUE( NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_CDATE)
-VALUES(NOTICE_NO_SEQ.NEXTVAL, '±â´ë¿¡ ºÎÀÀÇÏ´Â Áøº¸»ó¹«', '¸ðµç °í°´´ÔµéÀÇ ±â´ë¿¡ º¸´äÇÏ°Ú½À´Ï´Ù!', 
+VALUES(NOTICE_NO_SEQ.NEXTVAL, 'ê¸°ëŒ€ì— ë¶€ì‘í•˜ëŠ” ì§„ë³´ìƒë¬´', 'ëª¨ë“  ê³ ê°ë‹˜ë“¤ì˜ ê¸°ëŒ€ì— ë³´ë‹µí•˜ê² ìŠµë‹ˆë‹¤!', 
 SYSDATE);
---¸â¹ö Å×ÀÌºí »ý¼º==============================================================================
+--ë©¤ë²„ í…Œì´ë¸” ìƒì„±==============================================================================
 CREATE TABLE MEMBER(
   MEMBER_NO NUMBER NOT NULL,
   MEMBER_EMAIL VARCHAR2(100) NOT NULL,
@@ -118,7 +118,7 @@ CREATE SEQUENCE MEMBER_NO_SEQ
 INCREMENT BY 1
 START WITH 1;
 
---°í°´¼¾ÅÍ Å×ÀÌºí »ý¼º=============================================================================
+--ê³ ê°ì„¼í„° í…Œì´ë¸” ìƒì„±=============================================================================
 CREATE TABLE CUSTOMER(
   CUSTOMER_NO NUMBER NOT NULL,
   CUSTOMER_MNO NUMBER NOT NULL,
@@ -140,7 +140,7 @@ CREATE SEQUENCE CUSTOMER_NO_SEQ
 INCREMENT BY 1
 START WITH 1;
 
---ÀÌº¥Æ® Å×ÀÌºí »ý¼º===============================================================================
+--ì´ë²¤íŠ¸ í…Œì´ë¸” ìƒì„±===============================================================================
 CREATE TABLE EVENT(
   EVENT_NO NUMBER NOT NULL,
   EVENT_NAME VARCHAR2(100) NOT NULL,
@@ -160,22 +160,22 @@ START WITH 1;
 
 INSERT INTO EVENT
 VALUE (EVENT_NO, EVENT_NAME, EVENT_TIMG, EVENT_DIMG, EVENT_SDATE, EVENT_EDATE)
-VALUES (EVENT_NO_SEQ.NEXTVAL, 'Á¶½Ä ºßÆä', 'morning.jpg', 'flower1.jsp', '2024-08-01', '2024-08-31');
+VALUES (EVENT_NO_SEQ.NEXTVAL, 'ì¡°ì‹ ë·”íŽ˜', 'morning.jpg', 'flower1.jsp', '2024-08-01', '2024-08-31');
 
 INSERT INTO EVENT
 VALUE (EVENT_NO, EVENT_NAME, EVENT_TIMG, EVENT_DIMG, EVENT_SDATE, EVENT_EDATE)
-VALUES (EVENT_NO_SEQ.NEXTVAL, 'Á¡½É ÇÒÀÎ', 'lunch.jpg', 'sit.jsp', '2024-08-01', '2024-08-31');
+VALUES (EVENT_NO_SEQ.NEXTVAL, 'ì ì‹¬ í• ì¸', 'lunch.jpg', 'sit.jsp', '2024-08-01', '2024-08-31');
 
 INSERT INTO EVENT
 VALUE (EVENT_NO, EVENT_NAME, EVENT_TIMG, EVENT_DIMG, EVENT_SDATE, EVENT_EDATE)
-VALUES (EVENT_NO_SEQ.NEXTVAL, 'µð³Ê ÇýÅÃ', 'dinner.jpg', 'icecream.jsp', '2024-08-01', '2024-08-31');
+VALUES (EVENT_NO_SEQ.NEXTVAL, 'ë””ë„ˆ í˜œíƒ', 'dinner.jpg', 'icecream.jsp', '2024-08-01', '2024-08-31');
 
 INSERT INTO EVENT
 VALUE (EVENT_NO, EVENT_NAME, EVENT_TIMG, EVENT_DIMG, EVENT_SDATE, EVENT_EDATE)
-VALUES (EVENT_NO_SEQ.NEXTVAL, '¿þµù ÀÌº¥Æ®', 'wedding.jpg', 'flower2.jsp', '2024-08-01', '2024-08-31');
+VALUES (EVENT_NO_SEQ.NEXTVAL, 'ì›¨ë”© ì´ë²¤íŠ¸', 'wedding.jpg', 'flower2.jsp', '2024-08-01', '2024-08-31');
 
 
---È£ÅÚ Å×ÀÌºí »ý¼º==============================================================================
+--í˜¸í…” í…Œì´ë¸” ìƒì„±==============================================================================
 CREATE TABLE HOTEL(
   HOTEL_NO NUMBER NOT NULL,
   HOTEL_NAME varchar2(100) NOT NULL,
@@ -192,7 +192,7 @@ CREATE SEQUENCE HOTEL_NO_SEQ
 INCREMENT BY 1
 START WITH 1;
 
---ÆÐÅ°Áö(ÇÁ·Î¸ð¼Ç)Å×ÀÌºí »ý¼º=====================================================================
+--íŒ¨í‚¤ì§€(í”„ë¡œëª¨ì…˜)í…Œì´ë¸” ìƒì„±=====================================================================
 CREATE TABLE PROMOTION(
   PROMOTION_NO NUMBER NOT NULL,
   PROMOTION_HNO NUMBER NOT NULL,
@@ -217,7 +217,7 @@ CREATE SEQUENCE PROMOTION_NO_SEQ
 INCREMENT BY 1
 START WITH 1;
 
---¿¹¾à Å×ÀÌºí »ý¼º================================================================
+--ì˜ˆì•½ í…Œì´ë¸” ìƒì„±================================================================
 CREATE TABLE RESERVE(
   "RESERVE_NO" NUMBER NOT NULL,
   "RESERVE_PNO" NUMBER NOT NULL,
